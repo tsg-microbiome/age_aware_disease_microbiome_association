@@ -1,0 +1,3 @@
+GenericDiseaseClassificationYoungMiddle <- iterative_rf_generic_disease(combined_species_profile_with_age_country_final[,core_species],c(Young,Middle),c(Young,Middle),T2DIndividuals,IBDIndividuals,CirrhosisIndividuals,CRCIndividuals,AdenomaIndividuals,intersect(unique(c(IBDCohort,T2DCohort,CirrhosisCohort,CRCCohort,AdenomaCohort)),SelectControls),100,10,50)
+GenericDiseaseClassificationElderly <- iterative_rf_generic_disease(combined_species_profile_with_age_country_final[,core_species],c(Elderly),c(Elderly),T2DIndividuals,IBDIndividuals,CirrhosisIndividuals,CRCIndividuals,AdenomaIndividuals,intersect(unique(c(IBDCohort,T2DCohort,CirrhosisCohort,CRCCohort,AdenomaCohort)),SelectControls),100,10,50)
+
