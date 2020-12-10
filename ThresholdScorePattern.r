@@ -1,3 +1,8 @@
+#The code first computes the frequency at which taxa is picked as a feature (Mean Decrease Gini > 0) in the iterations. Once these frequencies are obtained, taxa are sorted based on their detection frequency and taxa are sorted and detection frequencies of taxa falling into various percentiles are obtained.
+#The code uses the outputs of the code IterativeRFAcrossAgeGroups.R
+#For the benefit of testing, the precomputed outputs of the above code are already uploaded into this github repository as IterativeRFOutputs.RData
+#Readers can directly read in this .RData workspace and test this code.
+
 T2DFeaturesPercentileDetection <- rbind(100*quantile(colSums(apply(rbind(rfT2DYoung_Elderly$featureProfile,rfT2DYoung_Middle$featureProfile,rfT2DYoung_Young$featureProfile),2,function(x)(ifelse(x>0,1,0)))),seq(0,1,0.05))/300,
 100*quantile(colSums(apply(rbind(rfT2DMiddle_Elderly$featureProfile,rfT2DMiddle_Middle$featureProfile,rfT2DMiddle_Young$featureProfile),2,function(x)(ifelse(x>0,1,0)))),seq(0,1,0.05))/300,
 100*quantile(colSums(apply(rbind(rfT2DElderly_Elderly$featureProfile,rfT2DElderly_Middle$featureProfile,rfT2DElderly_Young$featureProfile),2,function(x)(ifelse(x>0,1,0)))),seq(0,1,0.05))/300)
